@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiArrowDown, FiDownload, FiGithub, FiMail } from 'react-icons/fi'
+import { FiArrowDown, FiGithub, FiMail } from 'react-icons/fi'
 import FloatingBlobs from './FloatingBlobs.jsx'
 import TerminalRoles from './TerminalRoles.jsx'
 import { profile } from '../utils/data.js'
@@ -50,10 +50,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap gap-4">
-            <a href={profile.resumeUrl} download className="btn-primary">
-              <FiDownload /> Download Resume
-            </a>
-            <button onClick={() => scrollTo('projects')} className="btn-secondary">
+            <button onClick={() => scrollTo('projects')} className="btn-primary">
               View Projects
             </button>
             <button onClick={() => scrollTo('contact')} className="btn-secondary">
