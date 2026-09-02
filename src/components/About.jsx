@@ -1,12 +1,12 @@
-import { FiCpu, FiLayers, FiShield, FiCloud } from 'react-icons/fi'
+import { FiCpu, FiShield, FiWifi, FiLock } from 'react-icons/fi'
 import Reveal from './Reveal.jsx'
 import { about } from '../utils/data.js'
 
 const INTEREST_ICONS = {
   'Artificial Intelligence': FiCpu,
-  'Full Stack Development': FiLayers,
   Cybersecurity: FiShield,
-  'Cloud Computing': FiCloud,
+  Networking: FiWifi,
+  Cryptography: FiLock,
 }
 
 export default function About() {
