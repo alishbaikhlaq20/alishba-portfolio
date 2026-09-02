@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiExternalLink, FiGithub, FiUsers } from 'react-icons/fi'
+import { FiExternalLink, FiGithub, FiUsers, FiFileText } from 'react-icons/fi'
 
 /** Deterministic gradient per-project so placeholder art still feels designed, not random. */
 const GRADIENTS = [
@@ -18,12 +18,18 @@ export default function ProjectCard({ project, index }) {
       transition={{ type: 'spring', stiffness: 300, damping: 22 }}
       className={`group relative glass-card overflow-hidden flex flex-col ${
         project.featured ? 'md:col-span-2' : ''
-      }`}
+      } ${project.fyp ? 'ring-2 ring-accent dark:ring-accent-dark' : ''}`}
     >
-      {project.featured && (
+      {project.fyp ? (
         <span className="absolute top-4 right-4 z-10 badge bg-accent/90 text-white border-none">
-          ★ Featured
+          ★ Final Year Project
         </span>
+      ) : (
+        project.featured && (
+          <span className="absolute top-4 right-4 z-10 badge bg-accent/90 text-white border-none">
+            ★ Featured
+          </span>
+        )
       )}
 
       {/* Placeholder screenshot area */}
@@ -51,6 +57,12 @@ export default function ProjectCard({ project, index }) {
           )}
         </div>
 
+        {project.status && (
+          <p className="text-xs font-mono uppercase tracking-widest text-accent dark:text-accent-dark mb-3">
+            {project.status}
+          </p>
+        )}
+
         <p className="text-sm text-ink-light dark:text-ink-dark/70 leading-relaxed mb-4 flex-1">
           {project.description}
         </p>
@@ -63,34 +75,36 @@ export default function ProjectCard({ project, index }) {
           ))}
         </div>
 
-        <div className="flex items-center gap-3 mt-auto">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary !px-4 !py-2 text-xs flex-1 justify-center"
-          >
-            <FiGithub size={14} /> GitHub
-          </a>
-          {project.demo ? (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary !px-4 !py-2 text-xs flex-1 justify-center"
-            >
-              <FiExternalLink size={14} /> Live Demo
-            </a>
-          ) : (
-            <button
-              disabled
-              title="Live demo not available"
-              className="flex-1 inline-flex items-center gap-2 justify-center px-4 py-2 rounded-full text-xs font-medium border border-ink/10 dark:border-white/10 text-ink-light/50 dark:text-ink-dark/30 cursor-not-allowed"
-            >
-              <FiExternalLink size={14} /> No Demo
-            </button>
-          )}
-        </div>
+        {(project.github || project.demo) && (
+          <div className="flex items-center gap-3 mt-auto">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary !px-4 !py-2 text-xs flex-1 justify-center"
+              >
+                <FiGithub size={14} /> GitHub
+              </a>
+            )}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary !px-4 !py-2 text-xs flex-1 justify-center"
+              >
+                <FiExternalLink size={14} /> Live Demo
+              </a>
+            )}
+          </div>
+        )}
+
+        {!project.github && !project.demo && project.type === 'paper' && (
+          <div className="flex items-center gap-2 mt-auto text-xs font-medium text-ink-light dark:text-ink-dark/50">
+            <FiFileText size={14} /> Research Paper
+          </div>
+        )}
       </div>
     </motion.article>
   )
