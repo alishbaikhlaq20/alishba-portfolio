@@ -17,16 +17,36 @@ export default function Experience() {
           {experience.map((job, i) => (
             <Reveal key={job.id} delay={i * 0.1}>
               <div className="relative">
-                <span className="absolute -left-8 md:-left-10 top-1.5 w-[22px] h-[22px] rounded-full bg-surface dark:bg-surface-dark border-2 border-accent dark:border-accent-dark flex items-center justify-center">
-                  <FiBriefcase size={11} className="text-accent dark:text-accent-dark" />
+                <span
+                  className={`absolute -left-8 md:-left-10 top-1.5 w-[22px] h-[22px] rounded-full bg-surface dark:bg-surface-dark border-2 flex items-center justify-center ${
+                    job.current
+                      ? 'border-secondary-dark dark:border-primary'
+                      : 'border-accent dark:border-accent-dark'
+                  } ${job.current ? 'animate-pulse' : ''}`}
+                >
+                  <FiBriefcase
+                    size={11}
+                    className={job.current ? 'text-secondary-dark dark:text-primary' : 'text-accent dark:text-accent-dark'}
+                  />
                 </span>
 
-                <div className="glass-card p-6 md:p-7 hover:-translate-y-1 hover:shadow-soft-lg transition-all duration-300">
+                <div
+                  className={`glass-card p-6 md:p-7 hover:-translate-y-1 hover:shadow-soft-lg transition-all duration-300 ${
+                    job.current ? 'ring-2 ring-secondary-dark/60 dark:ring-primary/60' : ''
+                  }`}
+                >
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                     <h3 className="text-lg font-semibold text-ink dark:text-ink-dark">
                       {job.role} <span className="text-ink-light dark:text-ink-dark/50 font-normal">@ {job.company}</span>
                     </h3>
-                    <span className="badge">{job.period}</span>
+                    <span className="flex items-center gap-2">
+                      {job.current && (
+                        <span className="badge bg-secondary-dark/90 dark:bg-primary/90 text-white dark:text-ink border-none">
+                          ● Current
+                        </span>
+                      )}
+                      <span className="badge">{job.period}</span>
+                    </span>
                   </div>
                   <ul className="space-y-1.5">
                     {job.points.map((point, idx) => (
