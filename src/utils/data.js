@@ -20,81 +20,128 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "I'm a Software Engineering undergraduate (GPA: 3.5) who likes taking a problem apart until it's simple enough to solve — then building the system that solves it for everyone after me.",
-    'My focus sits at the intersection of Artificial Intelligence, Full Stack Development, Cybersecurity, and Cloud Computing — four areas that keep pulling on the same thread: how do we build software people can actually trust and rely on?',
-    "I'm currently looking for an internship where I can bring that curiosity to a real engineering team, ship things that matter, and learn from people further along the path than I am.",
+    "I'm a Software Engineering graduate of Usman Institute of Technology (UITU), Karachi, with interests spanning software development, artificial intelligence, cybersecurity, networking, and cryptography.",
+    'My final year project, APQ-Crypt, is a simulation-based adaptive cryptography framework — built on RISC-V — that combines machine learning with post-quantum and classical cryptographic algorithms to improve network security and resource efficiency. It sits right at the intersection of the areas I care about most.',
+    "Alongside coursework and project work, I've picked up hands-on experience through internships and job simulations at ISPR, Electronic Arts, and Walmart Global Tech, and I'm currently interning at Moin Systems.ai on web scraping and data research. I'm looking for opportunities in software engineering, AI/ML, cybersecurity, networking, or data/research-focused roles.",
   ],
-  interests: ['Artificial Intelligence', 'Full Stack Development', 'Cybersecurity', 'Cloud Computing'],
+  interests: ['Artificial Intelligence', 'Cybersecurity', 'Networking', 'Cryptography'],
 }
 
 export const education = {
-  school: 'Usman Institute of Technology (UIT)',
+  school: 'Usman Institute of Technology (UITU), Karachi',
   degree: 'BS Software Engineering',
-  gpa: '3.5',
+  gpa: '3.15',
   coursework: [
     'Artificial Intelligence',
     'Computer Networks',
+    'Post-Quantum Cryptography',
     'Cryptography',
-    'PQC Encryption',
     'Software Engineering Principles',
+    'Digital Image Processing',
   ],
 }
 
 export const experience = [
+  {
+    id: 'moin',
+    company: 'Moin Systems.ai',
+    role: 'Web Scraping & Data Research Intern',
+    period: 'Ongoing',
+    current: true,
+    points: [
+      'Conducting web scraping and data research to support company and business data collection.',
+      'Researching and organizing relevant company information into accurate, structured datasets.',
+    ],
+  },
   {
     id: 'ispr',
     company: 'ISPR',
     role: 'Intern',
     period: 'Jan 2026 – Feb 2026',
     points: [
-      "Worked on AI's role in hybrid warfare by analyzing digital trends and vulnerabilities.",
-      'Developed presentation and leadership skills.',
+      "Evaluated AI's role in hybrid warfare by analyzing digital trends and technical vulnerabilities to counter misinformation.",
+      'Developed strong presentation and leadership skills.',
     ],
   },
   {
     id: 'ea',
     company: 'Electronic Arts',
-    role: 'Software Engineer Job Simulation',
+    role: 'Software Engineer Intern (Job Simulation)',
     period: 'June 2025 – July 2025',
     points: [
-      'Designed C++ header files.',
-      'Created UML diagrams.',
-      'Suggested new game features.',
-      'Optimized data structures.',
+      'Proposed a new feature for EA Sports College Football and documented it for stakeholders.',
+      'Designed class diagrams, created C++ header files, and optimized the codebase with improved data structures.',
     ],
   },
   {
     id: 'walmart',
     company: 'Walmart Global Tech',
-    role: 'Software Engineering Job Simulation',
+    role: 'Software Engineer Job Simulation',
     period: 'Jan 2025 – Feb 2025',
     points: [
-      'Implemented a custom Java heap.',
-      'Designed UML and ER diagrams.',
+      'Built a custom heap data structure in Java for the shipping department, enhancing efficiency.',
+      'Designed UML class diagrams and ERDs to model multi-mode data processors and pet department databases.',
     ],
   },
 ]
 
 export const projects = [
   {
+    id: 'apq-crypt',
+    name: 'APQ-Crypt',
+    fullName: 'APQ-Crypt — Adaptive Post-Quantum & Classical Cryptography Framework',
+    fyp: true,
+    featured: true,
+    status: 'Ongoing · Final Year Project',
+    description:
+      'A simulation-based adaptive cryptography framework, built on RISC-V, that combines machine learning with post-quantum and classical cryptographic algorithms to enhance network security and resource efficiency.',
+    tech: ['Machine Learning', 'Post-Quantum Cryptography', 'RISC-V', 'Network Security'],
+    github: null,
+    demo: null,
+  },
+  {
     id: 'internfy',
     name: 'Internfy',
     featured: true,
     description:
-      'A full-stack internship portal supporting students, companies, and administrators, with ATS resume screening, role-based authentication, internship postings, application tracking, a cover letter generator, and resume analysis.',
-    tech: ['Python', 'Flask', 'React', 'SQLite', 'SQLAlchemy', 'Pandas', 'PyPDF2', 'Matplotlib'],
+      'A full-stack platform with role-based access, ATS-powered resume screening, auto-generated cover letters, and data-driven dashboards for students, companies, and admins.',
+    tech: ['Python', 'Flask', 'HTML', 'CSS', 'SQLAlchemy', 'SQLite', 'PyPDF2', 'Pandas', 'Matplotlib'],
     github: 'https://github.com/alishbaikhlaq20/Internfy',
     demo: null,
   },
   {
-    id: 'smartsched',
-    name: 'SmartSched AI',
+    id: 'ai-timetable',
+    name: 'AI Timetable Generator',
     featured: false,
     description:
-      'AI-powered timetable generator that automatically creates clash-free schedules for students and faculty.',
-    tech: ['Python', 'React', 'Flask', 'Tailwind'],
+      'Contributed to data preprocessing, cleaning, and backend constraint-module development for an AI-powered timetable generator.',
+    tech: ['Python', 'ReactJS', 'Tailwind CSS', 'Flask'],
     github: 'https://github.com/alishbaikhlaq20/SmartSched-AI',
     demo: null,
+    team: true,
+  },
+  {
+    id: 'sparse-matrix',
+    name: 'Sparse Matrix Analyzer',
+    featured: false,
+    description:
+      'A Python-based sparse matrix analyzer with conversion modules and test cases, enabling efficient matrix operations, performance benchmarking, visualization, and memory profiling.',
+    tech: ['Python', 'Matplotlib', 'Tkinter'],
+    github: 'https://github.com/umaimajaffer/Sparse_Matrix_analyzer',
+    demo: null,
+    team: true,
+  },
+  {
+    id: 'secure-cloud-backup',
+    name: 'Secure Cloud Backup & Disaster Recovery',
+    type: 'paper',
+    featured: false,
+    description:
+      'A secure disaster recovery framework using HSDRT and encryption, focused on improving recovery speed and reducing system downtime through optimized backup strategies. Research paper.',
+    tech: ['HSDRT', 'Encryption', 'Disaster Recovery'],
+    github: null,
+    demo: null,
+    team: true,
   },
   {
     id: 'gesture-tool',
@@ -124,31 +171,20 @@ export const projects = [
     github: 'https://github.com/alishbaikhlaq20/AI-translator-',
     demo: null,
   },
-  {
-    id: 'sparse-matrix',
-    name: 'Sparse Matrix Analyzer',
-    featured: false,
-    description: 'A team project for sparse matrix visualization and performance benchmarking across storage formats.',
-    tech: ['Python', 'Matplotlib', 'Tkinter'],
-    github: 'https://github.com/umaimajaffer/Sparse_Matrix_analyzer',
-    demo: null,
-    team: true,
-  },
 ]
 
 export const skills = {
-  'Programming Languages': ['Python', 'Java', 'JavaScript', 'C', 'C++', 'SQL', 'PHP'],
-  Frontend: ['React', 'Tailwind', 'HTML', 'CSS'],
-  Backend: ['Flask', 'SQLAlchemy', 'SQLite'],
-  Cloud: ['AWS', 'Docker', 'Kubernetes'],
-  Tools: ['Oracle', 'Linux', 'Kali Linux', 'Packet Tracer', 'Figma', 'Git', 'GitHub'],
+  'Programming Languages': ['C', 'C++', 'Java', 'Python', 'SQL', 'JavaScript', 'PHP'],
+  'Cloud & DevOps': ['AWS', 'Docker', 'Kubernetes'],
+  'Security & Networking': ['Kali Linux', 'Linux', 'Packet Tracer'],
+  'Databases & Tools': ['Oracle', 'PLS-SEM', 'Figma'],
 }
 
 export const certifications = [
-  { id: 'udemy-ml', title: 'Machine Learning with Python', issuer: 'Udemy' },
-  { id: 'udemy-r', title: 'R Programming', issuer: 'Udemy' },
-  { id: 'udemy-sdg', title: 'Sustainable Development Goals', issuer: 'Udemy' },
-  { id: 'google-soft', title: 'Soft Skills', issuer: 'Google' },
+  { id: 'udemy-ml', title: 'Machine Learning with Python A to Z', issuer: 'Udemy' },
+  { id: 'udemy-r', title: 'R-Programming Diploma', issuer: 'Udemy' },
+  { id: 'udemy-sdg', title: 'Understanding Sustainable Development Goals', issuer: 'Udemy' },
+  { id: 'google-soft', title: 'Soft Skill Program', issuer: 'Google' },
   { id: 'cisco-net', title: 'Networking Basics', issuer: 'Cisco' },
   { id: 'cisco-cyber', title: 'Introduction to Cybersecurity', issuer: 'Cisco' },
 ]
